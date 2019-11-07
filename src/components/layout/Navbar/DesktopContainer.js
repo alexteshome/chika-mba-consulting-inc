@@ -49,12 +49,11 @@ const DesktopContainer = props => {
     <Responsive getWidth={getWidth} minWidth={800}>
       <Segment vertical color="white" basic style={{ padding: 20 }}>
         <Image
-          as={Link}
+          //as={Link}
           src={banner}
-          centered
           size="large"
-          to="/home"
-          onClick={() => setActiveTab(null, { name: "home" })}
+          // to="/home"
+          // onClick={() => setActiveTab(null, { name: "home" })}
         />
       </Segment>
       <Visibility
