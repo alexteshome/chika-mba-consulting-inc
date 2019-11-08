@@ -10,14 +10,10 @@ function App() {
   return (
     <div>
       <ResponsiveContainer>
-        <Route
-          path={process.env.PUBLIC_URL + "/"}
-          exact
-          render={() => <Redirect to="/home" />}
-        />
-        <Route path={process.env.PUBLIC_URL + "/home"} component={Home} />
-        <Route path={process.env.PUBLIC_URL + "/about"} component={About} />
-        <Route path={process.env.PUBLIC_URL + "/contact"} component={Contact} />
+        <Route path="/" exact render={() => <Redirect to="/home" />} />
+        <Route path="/home" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
       </ResponsiveContainer>
       <Footer />
     </div>
