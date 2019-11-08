@@ -56,10 +56,9 @@ export default class Footer extends Component {
             </Grid.Column>
             <Grid.Column width={4} textAlign="right">
               <List>
-                <List.Item>314 Mykonos Crescent</List.Item>
-                <List.Item>Ottawa, ON K2S 0P1</List.Item>
                 <List.Item>(416) 835-1373</List.Item>
                 <List.Item>info@cmbaconsulting.ca</List.Item>
+                <List.Item>Ottawa, ON, Canada</List.Item>
               </List>
             </Grid.Column>
           </Grid>
