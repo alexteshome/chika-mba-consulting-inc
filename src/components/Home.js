@@ -29,8 +29,9 @@ const Home = props => {
             and scalability for future technological advances.
           </p>
           <Button
-            as={Link}
-            to="/about"
+            // as={Link}
+            // to="/about"
+            href="/about"
             color="blue"
             size="large"
             //onClick={() => props.setActiveTab(null, { name: "home" })}
