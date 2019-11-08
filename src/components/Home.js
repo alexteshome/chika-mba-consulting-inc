@@ -12,22 +12,29 @@ import {
   Icon
 } from "semantic-ui-react";
 
-const Home = () => {
+const Home = props => {
+  console.log(props);
   return (
     <div>
-      <Segment basic style={{ paddingTop: "7em" }} vertical>
+      <Segment basic style={{ paddingTop: "6em" }} vertical>
         <Container>
           <Header as="h1" style={{ fontSize: "3em", color: "#084166" }}>
             Solutions & Services Focused to Meet Your Needs
           </Header>
-          <p style={{ fontSize: "1.33em", margin: "1.5em 0em 2em 0em" }}>
+          <p style={{ fontSize: "1.33em", margin: "1em 0em 2em 0em" }}>
             At Chika Mba Consulting Inc., knowledge fuels strategy and knowledge
             is power. Our industry-leading expertise & customer-centric approach
             is what makes us easier to do business with. We help you evolve and
             make informed decisions with technology. We will ensure dexterity
             and scalability for future technological advances.
           </p>
-          <Button as={Link} to="/about" color="blue" size="large">
+          <Button
+            as={Link}
+            to="/about"
+            color="blue"
+            size="large"
+            //onClick={() => props.setActiveTab(null, { name: "home" })}
+          >
             Read More
           </Button>
         </Container>
@@ -76,16 +83,7 @@ const Home = () => {
                 with a one-stop shop for all your needs.
               </p>
             </Grid.Column>
-            <Grid.Column style={{ paddingBottom: "5em" }}>
-              <Icon inverted circular color="blue" name="truck" size="large" />
-              <Header as="h3" style={{ fontSize: "2em", color: "#084166" }}>
-                Fast Delivery
-              </Header>
-              <p style={{ fontSize: "1.33em" }}>
-                When you need your order fast, you can count on us to get them
-                to you quickly & easily.
-              </p>
-            </Grid.Column>
+
             <Grid.Column style={{ paddingBottom: "5em" }}>
               <Icon
                 inverted

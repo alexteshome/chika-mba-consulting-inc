@@ -27,7 +27,10 @@ const getWidth = () => {
 
 class ResponsiveContainer extends Component {
   state = {
-    activeItem: this.props.location.pathname.substr(1)
+    activeItem:
+      this.props.location.pathname.substr(1) === ""
+        ? "home"
+        : this.props.location.pathname.substr(1)
   };
 
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
@@ -50,6 +53,9 @@ class ResponsiveContainer extends Component {
       setActiveTab: this.handleItemClick,
       active: activeItem
     };
+    // const childrenWithProps = React.Children.map(children, child =>
+    //   React.cloneElement(child, { setActiveTab: this.handleItemClick })
+    // );
     return (
       <div>
         <DesktopContainer {...containerProps}>{children}</DesktopContainer>

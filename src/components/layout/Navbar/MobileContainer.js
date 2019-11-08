@@ -20,6 +20,7 @@ const MobileContainer = props => {
     items,
     handleSidebarHide,
     handleToggle,
+    setActiveTab,
     sidebarOpened
   } = props;
 
@@ -29,7 +30,7 @@ const MobileContainer = props => {
         as={Menu}
         animation="push"
         direction="right"
-        inverted
+        style={{ backgroundColor: "#084166" }}
         onHide={handleSidebarHide}
         vertical
         visible={sidebarOpened}
@@ -47,6 +48,7 @@ const MobileContainer = props => {
         {_.map(items, item => (
           <Menu.Item
             name={item.key}
+            style={{ color: "white" }}
             onClick={handleSidebarHide}
             header
             as={Link}
@@ -56,21 +58,21 @@ const MobileContainer = props => {
       </Sidebar>
 
       <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: 900 }}>
-        <Segment
-          inverted
-          textAlign="center"
-          vertical
-          style={{ padding: "3 3" }}
-        >
-          <Menu inverted pointing secondary size="huge">
-            <Segment vertical color="white" basic style={{ padding: 10 }}>
-              <Image src={banner} centered size="small" href="/home" />
-            </Segment>
+        <Segment basic textAlign="center" vertical style={{ paddingBottom: 0 }}>
+          <Menu secondary size="huge">
+            <Image
+              as={Link}
+              src={banner}
+              size="medium"
+              to="/home"
+              style={{ padding: "0px 0px 20px 20px" }}
+              onClick={() => setActiveTab(null, { name: "home" })}
+            />
             {/* <Menu.Item position="right" style={{ paddingRight: 10 }}>
               <AuthButton />
             </Menu.Item> */}
-            <Menu.Item position="right" onClick={handleToggle}>
-              <Icon name="sidebar" />
+            <Menu.Item position="right" onClick={handleToggle} size="huge">
+              <Icon name="sidebar" size="large" />
             </Menu.Item>
           </Menu>
         </Segment>

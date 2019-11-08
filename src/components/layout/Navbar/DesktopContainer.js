@@ -5,15 +5,12 @@ import { Link } from "react-router-dom";
 
 import banner from "../../../images/image2.png";
 import {
-  Icon,
   Container,
   Menu,
   Segment,
   Sidebar,
   Responsive,
   Image,
-  Dropdown,
-  Button,
   Visibility
 } from "semantic-ui-react";
 import _ from "lodash";
@@ -25,10 +22,7 @@ const DesktopContainer = props => {
     children,
     getWidth,
     items,
-    sidebarItems,
-    handleSidebarHide,
-    handleToggle,
-    sidebarOpened,
+
     setActiveTab,
     active
   } = props;
@@ -47,8 +41,14 @@ const DesktopContainer = props => {
     )); */
   return (
     <Responsive getWidth={getWidth} minWidth={800}>
-      <Segment vertical color="white" basic style={{ padding: 20 }}>
-        <Image src={banner} centered size="large" href="/home" />
+      <Segment vertical basic style={{ padding: 20 }}>
+        <Image
+          as={Link}
+          src={banner}
+          size="large"
+          to="/home"
+          onClick={() => setActiveTab(null, { name: "home" })}
+        />
       </Segment>
       <Visibility
         once={false}
@@ -229,7 +229,7 @@ const DesktopContainer = props => {
       </Visibility>
       {/* Sidebar Component */}
       <Sidebar.Pushable style={{ minHeight: 641 }}>
-        <Sidebar
+        {/* <Sidebar
           as={Menu}
           animation="overlay"
           color="blue"
@@ -249,7 +249,7 @@ const DesktopContainer = props => {
               {...item}
             />
           ))}
-        </Sidebar>
+        </Sidebar> */}
         <Sidebar.Pusher>{children}</Sidebar.Pusher>
       </Sidebar.Pushable>
     </Responsive>
@@ -265,7 +265,6 @@ DesktopContainer.propTypes = {
   children: PropTypes.node,
   getWidth: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  sidebarItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleSidebarHide: PropTypes.func.isRequired,
   handleToggle: PropTypes.func.isRequired,
   sidebarOpened: PropTypes.bool
