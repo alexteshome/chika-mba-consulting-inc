@@ -13,7 +13,6 @@ import {
 } from "semantic-ui-react";
 
 const Home = props => {
-  console.log(props);
   return (
     <div>
       <Segment basic style={{ paddingTop: "6em" }} vertical>
@@ -29,9 +28,8 @@ const Home = props => {
             and scalability for future technological advances.
           </p>
           <Button
-            // as={Link}
-            // to="/about"
-            href="/about"
+            as={Link}
+            to="/about"
             color="blue"
             size="large"
             //onClick={() => props.setActiveTab(null, { name: "home" })}
