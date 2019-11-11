@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Item, Label, List } from "semantic-ui-react";
+import { Segment, Item, List } from "semantic-ui-react";
 
 const Contact = () => (
   <Segment
@@ -8,7 +8,7 @@ const Contact = () => (
     textAlign="center"
     padded
     style={{
-      paddingTop: "5em"
+      paddingTop: "10em"
     }}
   >
     <Item>

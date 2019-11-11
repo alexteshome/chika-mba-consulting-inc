@@ -18,14 +18,7 @@ import _ from "lodash";
 const DesktopContainer = props => {
   const [fixed, showFixedMenu] = useState(false);
 
-  const {
-    children,
-    getWidth,
-    items,
-
-    setActiveTab,
-    active
-  } = props;
+  const { children, getWidth, items, setActiveTab, activeTab } = props;
 
   /* const RenderDropdown = items =>
     items.map(item => (
@@ -40,14 +33,14 @@ const DesktopContainer = props => {
       </Dropdown.Item>
     )); */
   return (
-    <Responsive getWidth={getWidth} minWidth={800}>
+    <Responsive getWidth={getWidth} minWidth={0}>
       <Segment vertical basic style={{ padding: 20 }}>
         <Image
           as={Link}
           src={banner}
           size="large"
           to="/home"
-          onClick={() => setActiveTab(null, { name: "home" })}
+          onClick={() => setActiveTab("home")}
         />
       </Segment>
       <Visibility
@@ -184,8 +177,8 @@ const DesktopContainer = props => {
                     paddingLeft: 50,
                     paddingRight: 50
                   }}
-                  active={item.key === active}
-                  onClick={setActiveTab}
+                  active={item.key === activeTab}
+                  onClick={() => setActiveTab(item.key)}
                   {...item}
                 />
               ))}
@@ -208,7 +201,7 @@ const DesktopContainer = props => {
                   inverted
                   name="user"
                   size="large"
-                  onClick={() => setActiveTab(_, { name: "profile" })}
+                  onClick={() => setActiveTab("profile")}
                 />
               </Link>
             </Menu.Item>
@@ -256,11 +249,6 @@ const DesktopContainer = props => {
   );
 };
 
-const sidebarStyle = {
-  padding: "1.5em 1.5em",
-  paddingLeft: "3em"
-};
-
 DesktopContainer.propTypes = {
   children: PropTypes.node,
   getWidth: PropTypes.func.isRequired,
@@ -270,8 +258,8 @@ DesktopContainer.propTypes = {
   sidebarOpened: PropTypes.bool
 };
 
-const dropdownItems = [
-  /* {
+/* const dropdownItems = [
+   {
     text: "Computers",
     subList: [
       {
@@ -346,6 +334,6 @@ const dropdownItems = [
         ]
       }
     ]
-  } */
-];
+  } 
+];*/
 export default DesktopContainer;

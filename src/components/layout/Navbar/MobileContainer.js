@@ -7,12 +7,11 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Button,
   Image
 } from "semantic-ui-react";
 import banner from "../../../images/image2.png";
 import _ from "lodash";
-
+// Not currently used
 const MobileContainer = props => {
   const {
     children,
@@ -25,7 +24,7 @@ const MobileContainer = props => {
   } = props;
 
   return (
-    <Responsive as={Sidebar.Pushable} getWidth={getWidth} maxWidth={800}>
+    <Responsive as={Sidebar.Pushable} getWidth={getWidth} maxWidth={0}>
       <Sidebar
         as={Menu}
         animation="push"

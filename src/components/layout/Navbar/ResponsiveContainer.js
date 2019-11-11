@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Responsive } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 import DesktopContainer from "./DesktopContainer";
-import MobileContainer from "./MobileContainer";
+//import MobileContainer from "./MobileContainer";
 import PropTypes from "prop-types";
 
 let items = [
@@ -26,22 +26,15 @@ const getWidth = () => {
 };
 
 class ResponsiveContainer extends Component {
-  state = {
-    activeItem:
-      this.props.location.pathname.substr(1) === ""
-        ? "home"
-        : this.props.location.pathname.substr(1)
-  };
+  state = {};
 
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
 
   handleToggle = () => this.setState({ sidebarOpened: true });
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { children } = this.props;
-    const { sidebarOpened, activeItem } = this.state;
+    const { children, activeTab, setActiveTab } = this.props;
+    const { sidebarOpened } = this.state;
 
     const containerProps = {
       getWidth: getWidth,
@@ -50,16 +43,14 @@ class ResponsiveContainer extends Component {
       handleSidebarHide: this.handleSidebarHide,
       handleToggle: this.handleToggle,
       sidebarOpened: sidebarOpened,
-      setActiveTab: this.handleItemClick,
-      active: activeItem
+      setActiveTab: setActiveTab,
+      activeTab: activeTab
     };
-    // const childrenWithProps = React.Children.map(children, child =>
-    //   React.cloneElement(child, { setActiveTab: this.handleItemClick })
-    // );
+
     return (
       <div>
         <DesktopContainer {...containerProps}>{children}</DesktopContainer>
-        <MobileContainer {...containerProps}>{children}</MobileContainer>
+        {/* <MobileContainer {...containerProps}>{children}</MobileContainer> */}
       </div>
     );
   }

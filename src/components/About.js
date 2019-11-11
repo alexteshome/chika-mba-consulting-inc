@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Segment, Container, Header, List, Item } from "semantic-ui-react";
+import React from "react";
+import { Segment, Container, Header, List } from "semantic-ui-react";
 
 const About = () => {
   return (

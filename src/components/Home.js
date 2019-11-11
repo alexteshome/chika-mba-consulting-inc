@@ -5,10 +5,8 @@ import {
   Header,
   Grid,
   Segment,
-  Image,
   Button,
   Divider,
-  List,
   Icon
 } from "semantic-ui-react";
 
@@ -32,7 +30,7 @@ const Home = props => {
             to="/about"
             color="blue"
             size="large"
-            //onClick={() => props.setActiveTab(null, { name: "home" })}
+            onClick={() => props.setActiveTab("about")}
           >
             Read More
           </Button>
