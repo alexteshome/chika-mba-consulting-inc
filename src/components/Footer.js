@@ -66,7 +66,7 @@ const Footer = props => {
             </List>
           </Grid.Column>
           <Grid.Column width={5}>
-            <Header inverted as="h3">
+            <Header inverted as="h4">
               Subscribe to our newsletter
             </Header>
             <Input action={"OK"} placeholder="Email Address" />
