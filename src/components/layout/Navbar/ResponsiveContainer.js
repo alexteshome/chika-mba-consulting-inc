@@ -9,7 +9,7 @@ let items = [
   {
     content: "Home",
     key: "home",
-    to: "/home"
+    to: "/"
   },
   { content: "About", key: "about", to: "/about" },
   {

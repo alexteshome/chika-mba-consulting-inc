@@ -39,7 +39,7 @@ const DesktopContainer = props => {
           as={Link}
           src={banner}
           size="large"
-          to="/home"
+          to="/"
           onClick={() => setActiveTab("home")}
         />
       </Segment>

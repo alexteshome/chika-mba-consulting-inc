@@ -18,9 +18,10 @@ const App = props => {
   return (
     <div>
       <ResponsiveContainer activeTab={activeTab} setActiveTab={setActiveTab}>
-        <Route path="/" exact render={() => <Redirect to="/home" />} />
+        <Route path="/home" exact render={() => <Redirect to="/" />} />
         <Route
-          path="/home"
+          path="/"
+          exact
           render={() => <Home setActiveTab={setActiveTab} />}
         />
         <Route path="/about" component={About} />
