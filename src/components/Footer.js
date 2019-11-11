@@ -16,7 +16,7 @@ const Footer = props => {
       vertical
       style={{ padding: "3em 0em", backgroundColor: "#084166" }}
     >
-      <Container textAlign="center" style={{ fontSize: "1.3em" }}>
+      <Container textAlign="center" style={{ fontSize: "1.15em" }}>
         <Grid
           divided
           inverted
