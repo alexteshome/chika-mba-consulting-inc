@@ -13,7 +13,7 @@ import {
 const Home = props => {
   return (
     <div>
-      <Segment basic style={{ paddingTop: "6em" }} vertical>
+      <Segment basic style={{ paddingTop: "5.5em" }} vertical>
         <Container>
           <Header as="h1" style={{ fontSize: "3em", color: "#084166" }}>
             Solutions & Services Focused to Meet Your Needs

@@ -11,7 +11,7 @@ const About = () => {
         textAlign="center"
         padded
         style={{
-          paddingTop: "6.5em",
+          paddingTop: "5.5em",
           paddingBottom: "4em",
           backgroundColor: "#2d5d7d"
         }}
