@@ -42,7 +42,7 @@ const Home = props => {
           as="h1"
           className="header"
           horizontal
-          style={{ margin: "2em 0em" }}
+          style={{ paddingBottom: "1.5em", paddingTop: "1em" }}
         >
           <Header
             style={{

@@ -73,7 +73,6 @@ const Footer = props => {
           </Grid.Column>
           <Grid.Column width={4}>
             <List>
-              <List.Item>(416) 835-1373</List.Item>
               <List.Item>info@cmbaconsulting.ca</List.Item>
               <List.Item>Ottawa, ON, Canada</List.Item>
             </List>
