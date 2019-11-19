@@ -22,10 +22,14 @@ class Contact extends React.Component {
     }).then(response => {
       console.log(response.data);
       if (response.data.message === "success") {
-        alert("Message Sent.");
+        if (typeof window !== `undefined`) {
+          alert("Message Sent.");
+        }
         this.resetForm();
       } else if (response.data.message === "fail") {
-        alert("Message failed to send.");
+        if (typeof window !== `undefined`) {
+          alert("Message failed to send.");
+        }
       }
     });
   }
