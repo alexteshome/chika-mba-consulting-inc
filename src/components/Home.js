@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -11,6 +11,10 @@ import {
 } from "semantic-ui-react";
 
 const Home = props => {
+  useEffect(() => {
+    props.setActiveTab("home");
+  });
+
   return (
     <div>
       <Segment basic style={{ paddingTop: "5.5em" }} vertical>
@@ -25,13 +29,7 @@ const Home = props => {
             make informed decisions with technology. We will ensure dexterity
             and scalability for future technological advances.
           </p>
-          <Button
-            as={Link}
-            to="/about"
-            color="blue"
-            size="large"
-            onClick={() => props.setActiveTab("about")}
-          >
+          <Button as={Link} to="/about" color="blue" size="large">
             Read More
           </Button>
         </Container>

@@ -24,8 +24,14 @@ const App = props => {
           exact
           render={() => <Home setActiveTab={setActiveTab} />}
         />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
+        <Route
+          path="/about"
+          render={() => <About setActiveTab={setActiveTab} />}
+        />
+        <Route
+          path="/contact"
+          render={() => <Contact setActiveTab={setActiveTab} />}
+        />
       </ResponsiveContainer>
       <Footer setActiveTab={setActiveTab} />
     </div>

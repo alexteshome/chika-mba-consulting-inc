@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Segment, Container, Header, List } from "semantic-ui-react";
 
-const About = () => {
+const About = props => {
+  useEffect(() => {
+    props.setActiveTab("about");
+  });
+
   return (
     <div>
       <Segment
