@@ -24,7 +24,7 @@ const Contact = props => {
     setLoading(true);
     axios({
       method: "POST",
-      url: "http://localhost:3001/send",
+      url: "https://chika-mba-mailer.herokuapp.com/send",
       data: { creds, name, email, message }
     })
       .then(response => {
